@@ -42,10 +42,11 @@ else
         echo "eval ssh-agent" && \
         eval `ssh-agent -s` && \
         printf "${SSH_KEY_PASSPHRASE}\n" | ssh-add $HOME/.ssh/id_rsa
+    fi
 fi
 
 #install node_modules
-yarn install
+yarn install 
 
 #start node
 yarn start
