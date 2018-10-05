@@ -46,7 +46,7 @@ else
     fi
 fi
 
-git clone $GIT_REPO
+git clone $GIT_REPO .
 
 #install node_modules
 yarn install 
