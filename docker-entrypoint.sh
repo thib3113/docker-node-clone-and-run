@@ -29,6 +29,7 @@ file_env 'SSH_KEY_PASSPHRASE'
 if [[ -z "$GIT_REPO" ]];
 then
     echo -e "empty repository URL !\nPlease fill environment GIT_REPO, or GIT_REPO_FILE"
+    exit 1
 else
     if [[ -n "$SSH_HOST" ]];
     then
@@ -44,6 +45,8 @@ else
         printf "${SSH_KEY_PASSPHRASE}\n" | ssh-add $HOME/.ssh/id_rsa
     fi
 fi
+
+git clone $GIT_REPO
 
 #install node_modules
 yarn install 
