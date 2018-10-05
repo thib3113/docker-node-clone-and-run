@@ -45,7 +45,7 @@ else
 fi
 
 #install node_modules
-yarn install;
+yarn install
 
 #start node
-yarn start;
+yarn start
