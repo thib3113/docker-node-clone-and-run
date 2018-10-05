@@ -46,10 +46,9 @@ else
     fi
 fi
 
-ls -al /app
-
 echo -e "bf clone"
-git clone $GIT_REPO /app
+git clone $GIT_REPO ./tmp
+mv ./tmp/* .
 
 #install node_modules
 yarn install 
