@@ -50,8 +50,4 @@ echo -e "bf clone"
 git clone $GIT_REPO ./tmp
 mv ./tmp/* .
 
-#install node_modules
-yarn install 
-
-#start node
-yarn start
+yarn install  && yarn start
