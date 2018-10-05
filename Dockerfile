@@ -3,7 +3,8 @@ LABEL maintainer="citopia <citopia.fr>" version=1.0
 
 RUN apk add --no-cache git bash openssh-client yarn
 
-ENV CI_MODE false
+#add node_modules in cache
+VOLUME /app/node_modules
 
 WORKDIR /app
 
