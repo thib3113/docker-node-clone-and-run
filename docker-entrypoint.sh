@@ -47,7 +47,13 @@ else
 fi
 
 echo -e "bf clone"
-git clone $GIT_REPO ./tmp
+
+if [[ -z "$GIT_BRANCH" ]];
+then
+    git clone --single-branch -b master $GIT_REPO ./tmp
+else
+    git clone --single-branch -b $GIT_BRANCH $GIT_REPO ./tmp
+fi
 mv ./tmp/* .
 
 yarn install  && yarn start
