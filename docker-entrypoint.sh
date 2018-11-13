@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # usage: file_env VAR [DEFAULT]
 #    ie: file_env 'XYZ_DB_PASSWORD' 'example'
 # (will allow for "$XYZ_DB_PASSWORD_FILE" to fill in the value of
@@ -56,6 +58,13 @@ else
 fi
 mv ./tmp/* .
 
-node -p "let pkg = require('./package.json');`Start app ${pkg.name} - ${pkg.version}`"
 
-yarn install  && yarn start
+yarn install --silent --non-interactive 
+
+echo -e "\n"
+echo -e "\n"
+echo -e "\n"
+echo -e "start app"
+
+node -p 'let pkg = require("./package.json");`${pkg.name} - ${pkg.version}`'
+yarn start
