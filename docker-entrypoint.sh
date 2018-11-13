@@ -46,14 +46,16 @@ else
     fi
 fi
 
-echo -e "bf clone"
-
 if [[ -z "$GIT_BRANCH" ]];
 then
+    echo -e "cloning branch master"
     git clone --single-branch -b master $GIT_REPO ./tmp
 else
+    echo -e "cloning branch master"
     git clone --single-branch -b $GIT_BRANCH $GIT_REPO ./tmp
 fi
 mv ./tmp/* .
+
+node -p "let pkg = require('./package.json');`Start app ${pkg.name} - ${pkg.version}`"
 
 yarn install  && yarn start
