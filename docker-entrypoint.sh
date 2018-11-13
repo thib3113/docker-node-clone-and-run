@@ -53,7 +53,7 @@ then
     echo -e "cloning branch master"
     git clone --single-branch -b master $GIT_REPO ./tmp
 else
-    echo -e "cloning branch master"
+    echo -e "cloning branch $GIT_BRANCH"
     git clone --single-branch -b $GIT_BRANCH $GIT_REPO ./tmp
 fi
 mv ./tmp/* .
@@ -61,8 +61,6 @@ mv ./tmp/* .
 
 yarn install --silent --non-interactive 
 
-echo -e "\n"
-echo -e "\n"
 echo -e "\n"
 echo -e "start app"
 
