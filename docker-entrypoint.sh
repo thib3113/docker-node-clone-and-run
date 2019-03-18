@@ -56,8 +56,8 @@ else
     echo -e "cloning branch $GIT_BRANCH"
     git clone --single-branch -b $GIT_BRANCH $GIT_REPO ./tmp
 fi
-mv ./tmp/* .
-
+mv ./tmp/* ./tmp/.* .
+rm -R ./tmp
 
 yarn install --silent --non-interactive 
 
