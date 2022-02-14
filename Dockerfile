@@ -1,5 +1,5 @@
 FROM node:lts-alpine
-LABEL maintainer="citopia <citopia.fr>" version=1.0
+LABEL maintainer="Thibaut SEVERAC <thib3113@gmail.com>" version=1.0
 
 RUN apk add --no-cache git bash openssh-client yarn
 
